@@ -28,7 +28,7 @@ export class Pagina2Page implements OnInit {
 
   irPagina3(mutante: any) {
     this.store.set('mutante', mutante);
-    this.navCtrl.navigateForward(['pagina3']);
+    this.navCtrl.navigateForward(['pagina3'], mutante);
     // this.router.navigate(['/pagina3', {mutante}])
   }
 
