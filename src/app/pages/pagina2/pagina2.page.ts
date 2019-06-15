@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { NavController } from '@ionic/angular';
+
+import { Store } from "store";
 
 @Component({
   selector: 'app-pagina2',
@@ -7,9 +12,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Pagina2Page implements OnInit {
 
-  constructor() { }
+  mutantes: any[] = [
+    { nombre: "Magneto", poder: "Controlar Metales" },
+    { nombre: "Wolwerine", poder: "Regeneración Acelerada" },
+    { nombre: "Profesor X", poder: "Poderes Psiquicos" }
+  ]
+
+  constructor(
+    private router: Router, 
+    public navCtrl: NavController,
+    private store: Store) {  }
 
   ngOnInit() {
+  }
+
+  irPagina3(mutante: any) {
+    this.store.set('mutante', mutante);
+    this.navCtrl.navigateForward(['pagina3'], mutante);
+    // this.router.navigate(['/pagina3', {mutante}])
   }
 
 }

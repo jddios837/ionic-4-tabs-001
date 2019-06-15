@@ -1,9 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>pagina3</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="volver"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+        {{ (mutante$ | async)?.nombre }}
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <h3 text-center>{{ (mutante$ | async)?.poder }}</h3>
 </ion-content>

@@ -1,9 +1,21 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="volver"></ion-back-button>
+    </ion-buttons>
+    
     <ion-title>pagina2</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <h2 text-center>Enviando con Eventos</h2>
+  <ion-list>
+    <ion-item 
+      *ngFor="let mutante of mutantes"
+      (click)="irPagina3(mutante)">
+      <ion-label> {{ mutante.nombre }} </ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

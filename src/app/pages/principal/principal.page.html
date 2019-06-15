@@ -1,9 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>principal</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Principal - Root</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-button expand="full" color="primary" (click)="onClickPage2()">
+    Ir a la pagina 2
+  </ion-button>
 
+  <ion-button 
+    expand="full" 
+    color="primary"
+    [href]="'/pagina2'" 
+    routerDirection="forward">
+    Ir a la pagina 2 - HTML (No funciona return)
+  </ion-button>
 </ion-content>

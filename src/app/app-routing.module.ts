@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
+  { path: '', redirectTo: 'principal', pathMatch: 'full' },
   { path: 'principal', loadChildren: './pages/principal/principal.module#PrincipalPageModule' },
   { path: 'pagina2', loadChildren: './pages/pagina2/pagina2.module#Pagina2PageModule' },
   { path: 'pagina3', loadChildren: './pages/pagina3/pagina3.module#Pagina3PageModule' },
