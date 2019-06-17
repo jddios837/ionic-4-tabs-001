@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NavController } from "@ionic/angular";
 
 import { Store } from "store";
 
@@ -12,7 +13,10 @@ export class Pagina3Page implements OnInit, OnDestroy {
 
   mutante$: any;
 
-  constructor(private router: ActivatedRoute, private store: Store) { 
+  constructor(
+    private router: ActivatedRoute, 
+    private store: Store,
+    private navCtrl: NavController) { 
 
     // this.store.select<any>('mutante').subscribe(data => {
     //   console.log('Muntante ', data);
@@ -32,6 +36,16 @@ export class Pagina3Page implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     
+  }
+
+  irAtras() {
+    // navigate one page back
+    this.navCtrl.pop();
+  }
+
+  irRoot() {
+    // navigate root page
+    this.navCtrl.navigateRoot('/');
   }
 
 
