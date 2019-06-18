@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IonTabs } from "@ionic/angular";
 
 @Component({
   selector: 'app-ajustes',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjustesPage implements OnInit {
 
-  constructor() { }
+  constructor(private tabs: IonTabs) { }
 
   ngOnInit() {
+  }
+
+  irAtras() {
+    // Select a tab on the controller
+    this.tabs.select('principal');
   }
 
 }

@@ -9,8 +9,15 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
+    path:'', redirectTo:'ajustes', pathMatch:'full'
+  },
+  {
     path: '',
-    component: TabsPage
+    component: TabsPage,
+    children: [
+      { path: 'principal', loadChildren: '../principal/principal.module#PrincipalPageModule'},
+      { path: 'ajustes', loadChildren: '../ajustes/ajustes.module#AjustesPageModule'}
+    ]
   }
 ];
 
